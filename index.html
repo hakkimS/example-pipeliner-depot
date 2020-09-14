@@ -1,0 +1,22 @@
+<h2>General</h2>
+<p>This pipeliner depot consists of example pipelines and stages to showcase
+  how to utilize Pipeliner.</p>
+<p>To learn more about the setup test, extend and use Pipeliner, refer to the
+  <a href="https://github.com/Daimler/pipeliner">Pipeliner documentation</a>.</p>
+<h2>Using pipelines</h2>
+<p>The Pipeline executators are automatically available in Jenkinsfiles
+  because both Pipeliner (as a git submodule) and this example-pipeliner-depot
+  are loaded as shared libraries in Jenkins. Here is an example Jenkinsfile:</p>
+<p>
+  <pre>
+    @Library('example-pipeliner-depot@master') _
+    execComponentPipeline()
+  </pre>
+</p>
+<p>The first line tells Jenkins which vesion of the
+  <em>example-pipeliner-depot</em> to use, in this case master, and the
+  <code>execComponentPipeline()</code> is a wrapper function which initializes
+  the specific pipeline and runs it. The intention of that wrapper is to be
+  able to connect different pipelines.</p>
+<p>Please be aware of the fact that each pipeline uses stages which have many
+  sideeffects and requirements.</p>

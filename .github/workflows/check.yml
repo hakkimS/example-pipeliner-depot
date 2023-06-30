@@ -20,9 +20,11 @@ jobs:
           
       - name: Create credentials file for build script
         run: |
-          echo ${{ secrets.USERNAME }},${{ secrets.PASSWORD }} >> cli_credentials.csv
+         echo hai
+         # echo ${{ secrets.USERNAME }},${{ secrets.PASSWORD }} >> cli_credentials.csv
           
       - name: Build Project for Windows Debug
         run: |
-          set PATH=C:\\openjdk-18.0.1.1_windows-x64_bin\\jdk-18.0.1.1;%PATH%
-          build.bat --win_debug -nostart
+          echo hai
+          #set PATH=C:\\openjdk-18.0.1.1_windows-x64_bin\\jdk-18.0.1.1;%PATH%
+          #build.bat --win_debug -nostart
